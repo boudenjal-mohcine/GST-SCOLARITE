@@ -16,6 +16,8 @@ db_connection::db_connection()
 
     this->db.open();
 
+    this->query = new QSqlQuery(dbname);
+
 }
 
 bool db_connection::testConnection(){

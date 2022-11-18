@@ -2,8 +2,9 @@
 #define SIGNUP_H
 
 #include <QDialog>
-#include "auth.h"
+#include "db_connection.h"
 
+class auth;
 namespace Ui {
 class signup;
 }
@@ -20,7 +21,8 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
-    auth:auth* ath;
+    db_connection *conn;
+    auth* ath;
     Ui::signup *ui;
 };
 

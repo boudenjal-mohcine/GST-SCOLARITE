@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     auth.cpp \
     db_connection.cpp \
+    forgotpassword.cpp \
     main.cpp \
     mainwindow.cpp \
     signup.cpp
@@ -18,11 +19,13 @@ SOURCES += \
 HEADERS += \
     auth.h \
     db_connection.h \
+    forgotpassword.h \
     mainwindow.h \
     signup.h
 
 FORMS += \
     auth.ui \
+    forgotpassword.ui \
     mainwindow.ui \
     signup.ui
 

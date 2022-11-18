@@ -1,9 +1,9 @@
 #ifndef AUTH_H
 #define AUTH_H
-#include "signup.h"
 
 #include <QDialog>
 
+class signup;
 namespace Ui {
 class auth;
 }

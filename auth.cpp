@@ -15,7 +15,7 @@ auth::auth(QWidget *parent) :
 //    on_pushButton_clicked();
 
     connect(ui->pushButton_2, SIGNAL(click()), this, SLOT(on_pushButton_2_clicked()));
-
+    this->setFixedSize(this->size().width(),this->size().height());
 }
 
 auth::~auth()

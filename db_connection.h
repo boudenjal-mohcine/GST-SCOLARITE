@@ -11,7 +11,9 @@ class db_connection
     QString username;
     QString password;
     QString dbname;
+
 public:
+    QSqlQuery *query;
     db_connection();
     bool testConnection();
 };
