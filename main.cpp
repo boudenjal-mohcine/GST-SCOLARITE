@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "db_connection.h"
+#include "auth.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -21,7 +22,10 @@ int main(int argc, char *argv[])
         }
     }
     MainWindow w;
-    w.show();
+    auth auth;
+
+    auth.show();
+//    w.show();
 
     //////////////////////////////DB_CONNECTION//////////////////////////////////////
     db_connection conn;
