@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>870</width>
-    <height>602</height>
+    <width>842</width>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">* {
@@ -24,9 +27,14 @@ QFrame {
 	border-radius: 15px;
 }
 
+QDialog {
+	background: #eee;
+}
+
 QPushButton {
 	border-radius: 60px;
 	background: #39AAFF;
+	color: white;
 }
 
 QToolButton {
@@ -42,7 +50,11 @@ QLabel {
 	border-radius: 15px;
 }
 
-#pushButton:hover{
+#pushButton_2{
+	border-radius: 15px;
+}
+
+QPushButton:hover{
 	color: red;
 	border-radius: 15px;
 	background: #eee;
@@ -59,7 +71,20 @@ QLineEdit{
 #frame_2 {
 	background: url(:/image.png);
 }
-</string>
+
+#commandLinkButton {
+	background: transparent;
+	font-size: 18px;
+	color: white;
+	font-weight: normal
+}
+
+#toolButton_2 {
+	border-radius: 70px;
+}</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -92,10 +117,10 @@ QLineEdit{
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>370</y>
-      <width>191</width>
-      <height>61</height>
+      <x>80</x>
+      <y>380</y>
+      <width>131</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -112,7 +137,7 @@ QLineEdit{
      </rect>
     </property>
     <property name="placeholderText">
-     <string>username</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
@@ -131,7 +156,7 @@ QLineEdit{
      <enum>QLineEdit::Password</enum>
     </property>
     <property name="placeholderText">
-     <string>password</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -160,10 +185,36 @@ QLineEdit{
      <string>Password</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>380</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SIGN UP</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>300</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>forget the password</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolButton" name="toolButton">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -190,7 +241,7 @@ QLineEdit{
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/5087579.png</normaloff>:/5087579.png</iconset>
+     <normaloff>:/refer.png</normaloff>:/refer.png</iconset>
    </property>
    <property name="iconSize">
     <size>

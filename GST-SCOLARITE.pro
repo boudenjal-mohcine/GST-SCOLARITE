@@ -12,16 +12,19 @@ SOURCES += \
     auth.cpp \
     db_connection.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    signup.cpp
 
 HEADERS += \
     auth.h \
     db_connection.h \
-    mainwindow.h
+    mainwindow.h \
+    signup.h
 
 FORMS += \
     auth.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    signup.ui
 
 TRANSLATIONS += \
     GST-SCOLARITE_fr_FR.ts

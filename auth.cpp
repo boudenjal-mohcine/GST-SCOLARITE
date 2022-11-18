@@ -1,9 +1,11 @@
-#include "auth.h"
 #include "ui_auth.h"
 #include "QMessageBox"
 #include "QSqlDatabase"
 #include "QSqlQuery"
 #include "db_connection.h"
+#include "QApplication"
+#include "auth.h"
+#include "signup.h"
 
 auth::auth(QWidget *parent) :
     QDialog(parent),
@@ -11,6 +13,8 @@ auth::auth(QWidget *parent) :
 {
     ui->setupUi(this);
 //    on_pushButton_clicked();
+
+    connect(ui->pushButton_2, SIGNAL(click()), this, SLOT(on_pushButton_2_clicked()));
 
 }
 
@@ -42,5 +46,14 @@ void auth::on_pushButton_clicked()
 
 //        QMessageBox::information(this, "Envoi vers BD", "Envoi complet");
 
+}
+
+
+void auth::on_pushButton_2_clicked()
+{
+//    QApplication a;
+    sn = new signup;
+    sn->show();
+    auth::~auth();
 }
 

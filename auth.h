@@ -1,5 +1,6 @@
 #ifndef AUTH_H
 #define AUTH_H
+#include "signup.h"
 
 #include <QDialog>
 
@@ -19,7 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
+    signup* sn;
+
+
     Ui::auth *ui;
 };
 
