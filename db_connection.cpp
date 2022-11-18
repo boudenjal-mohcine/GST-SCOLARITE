@@ -16,7 +16,6 @@ db_connection::db_connection()
 
     this->db.open();
 
-
 }
 
 bool db_connection::testConnection(){
