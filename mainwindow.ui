@@ -2,21 +2,217 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1016</width>
+    <height>675</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <property name="styleSheet">
+   <string notr="true">* {
+	font-family: century gothic;
+	font-size: 24px;
+}
+
+#toolButton_3{
+
+	border-radius: 30px;
+}
+
+QFrame {
+	background: #333;
+	border-radius: 15px;
+}
+
+QDialog {
+	background: #eee;
+}
+
+QPushButton {
+	border-radius: 60px;
+	background: #39AAFF;
+	color: white;
+}
+
+QToolButton {
+	border-radius: 60px;
+	background: #39AAFF;
+}
+
+QLabel {
+	color: white;
+}
+
+#pushButton{
+	border-radius: 15px;
+}
+
+#pushButton_2{
+	border-radius: 15px;
+}
+
+QPushButton:hover{
+	color: red;
+	border-radius: 15px;
+	background: #eee;
+}
+
+QLineEdit{
+	background: transparent;
+	border: none;
+	color: #717072;
+	border-bottom: 1px solid #717072;
+
+}
+
+#frame_2 {
+	background: url(:/image.png);
+}
+
+#commandLinkButton {
+	background: transparent;
+	font-size: 18px;
+	color: white;
+	font-weight: bold
+}
+
+#toolButton_2 {
+	border-radius: 70px;
+}
+
+#label_6 {
+	font-size: 18px;
+	color: white;
+	font-weight: normal
+}
+
+QScrollBar{
+	border: 1px solid #999999;
+	background: #717072;
+	width: 10px;
+	margin: 0;
+}
+
+
+
+#comboBox {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #717072;
+	
+}
+
+#comboBox::itemData {
+	color: white;
+
+	
+}
+
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>701</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QToolButton" name="toolButton_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>100</y>
+       <width>341</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="images.qrc">
+       <normaloff>:/image.png</normaloff>:/image.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>400</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>240</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hello world</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1016</width>
+     <height>34</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

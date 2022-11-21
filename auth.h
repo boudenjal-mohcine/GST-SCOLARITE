@@ -1,10 +1,11 @@
 #ifndef AUTH_H
 #define AUTH_H
-
 #include <QDialog>
 
 class signup;
 class forgotpassword;
+class db_connection;
+class MainWindow;
 
 namespace Ui {
 class auth;
@@ -30,8 +31,11 @@ private:
     signup* sn;
     forgotpassword* fp;
 
+    db_connection *conn;
 
     Ui::auth *ui;
+
+    MainWindow *m;
 };
 
 #endif // AUTH_H

@@ -22,6 +22,11 @@
 	font-size: 24px;
 }
 
+#toolButton_3{
+
+	border-radius: 30px;
+}
+
 QFrame {
 	background: #333;
 	border-radius: 15px;
@@ -517,9 +522,57 @@ QScrollBar{
     </item>
    </widget>
   </widget>
+  <widget class="QToolButton" name="toolButton_3">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="tabletTracking">
+    <bool>false</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/back.png</normaloff>:/back.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+   <property name="autoExclusive">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>toolButton_2</zorder>
   <zorder>frame</zorder>
   <zorder>toolButton</zorder>
+  <zorder>toolButton_3</zorder>
  </widget>
  <resources>
   <include location="images.qrc"/>

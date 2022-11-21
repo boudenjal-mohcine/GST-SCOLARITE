@@ -9,7 +9,7 @@ signup::signup(QWidget *parent) :
     ui(new Ui::signup)
 {
     ui->setupUi(this);
-//    connect(ui->pushButton_2, SIGNAL(click()), this, SLOT(on_pushButton_2_clicked()));
+    connect(ui->toolButton_3, SIGNAL(click()), this, SLOT(on_toolButton_3_clicked()));
     this->setFixedSize(this->size().width(),this->size().height());
 
     conn = new db_connection();
@@ -80,6 +80,17 @@ void signup::on_pushButton_2_clicked()
 
 
 
+
+}
+
+
+void signup::on_toolButton_3_clicked()
+{
+
+    ath = new auth;
+    ath->show();
+    ath->setFixedSize(ath->size());
+    signup::~signup();
 
 }
 

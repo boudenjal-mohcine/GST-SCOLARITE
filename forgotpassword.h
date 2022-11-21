@@ -21,7 +21,6 @@ private slots:
 
 private:
     Ui::forgotpassword *ui;
-    Ui::auth* a;
 
 };
 
