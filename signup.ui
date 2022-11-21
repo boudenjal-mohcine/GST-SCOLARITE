@@ -101,7 +101,6 @@ QScrollBar{
 #comboBox {
 	background: transparent;
 	border: none;
-	color: #717072;
 	border-bottom: 1px solid #717072;
 	
 }
@@ -332,7 +331,7 @@ QScrollBar{
      <string>SIGN IN</string>
     </property>
     <property name="icon">
-     <iconset resource="../build-GST-SCOLARITE-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/debug/qmake_qmake_qm_files.qrc">
+     <iconset resource="../../GST-SCOLARITE/build-GST-SCOLARITE-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/debug/qmake_qmake_qm_files.qrc">
       <normaloff>:/i18n/GST-SCOLARITE_fr_FR.qm</normaloff>:/i18n/GST-SCOLARITE_fr_FR.qm</iconset>
     </property>
    </widget>
@@ -435,11 +434,20 @@ QScrollBar{
       <height>26</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
     <property name="currentText">
-     <string/>
+     <string>FST Tanger</string>
     </property>
     <property name="insertPolicy">
      <enum>QComboBox::NoInsert</enum>
@@ -514,8 +522,8 @@ QScrollBar{
   <zorder>toolButton</zorder>
  </widget>
  <resources>
-  <include location="../build-GST-SCOLARITE-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/debug/qmake_qmake_qm_files.qrc"/>
   <include location="images.qrc"/>
+  <include location="../../GST-SCOLARITE/build-GST-SCOLARITE-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/debug/qmake_qmake_qm_files.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -7,5 +7,7 @@
         <file>add-user.png</file>
         <file>refer.png</file>
         <file>add-user (1).png</file>
+        <file>password.png</file>
+        <file>back.png</file>
     </qresource>
 </RCC>

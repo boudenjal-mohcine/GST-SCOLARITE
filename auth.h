@@ -4,6 +4,8 @@
 #include <QDialog>
 
 class signup;
+class forgotpassword;
+
 namespace Ui {
 class auth;
 }
@@ -22,8 +24,11 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_commandLinkButton_clicked();
+
 private:
     signup* sn;
+    forgotpassword* fp;
 
 
     Ui::auth *ui;

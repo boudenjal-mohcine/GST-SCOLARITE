@@ -6,6 +6,7 @@
 #include "QApplication"
 #include "auth.h"
 #include "signup.h"
+#include "forgotpassword.h"
 
 auth::auth(QWidget *parent) :
     QDialog(parent),
@@ -15,6 +16,8 @@ auth::auth(QWidget *parent) :
 //    on_pushButton_clicked();
 
     connect(ui->pushButton_2, SIGNAL(click()), this, SLOT(on_pushButton_2_clicked()));
+    connect(ui->commandLinkButton, SIGNAL(click()), this, SLOT(on_commandLinkButton_clicked()));
+
     this->setFixedSize(this->size().width(),this->size().height());
 }
 
@@ -55,5 +58,15 @@ void auth::on_pushButton_2_clicked()
     sn = new signup;
     sn->show();
     auth::~auth();
+}
+
+
+void auth::on_commandLinkButton_clicked()
+{
+    fp=new forgotpassword;
+    fp->show();
+    auth::~auth();
+
+
 }
 
