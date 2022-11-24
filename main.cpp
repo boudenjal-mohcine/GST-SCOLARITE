@@ -3,6 +3,7 @@
 #include <QTranslator>
 #include<QDebug>
 #include "auth.h"
+#include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
@@ -12,7 +13,9 @@ int main(int argc, char *argv[])
 
     auth auth;
 
-    auth.show();
+    MainWindow win;
+
+    win.show();
 
 
 
