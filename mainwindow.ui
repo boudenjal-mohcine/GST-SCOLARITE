@@ -196,7 +196,7 @@ QPushButton: hover {
          </property>
          <property name="icon">
           <iconset resource="images.qrc">
-           <normaloff>:/menu(1).png</normaloff>:/menu(1).png</iconset>
+           <normaloff>:/menu.png</normaloff>:/menu.png</iconset>
          </property>
          <property name="iconSize">
           <size>
