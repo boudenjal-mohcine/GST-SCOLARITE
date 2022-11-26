@@ -1,10 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QPropertyAnimation"
-#include "QtCore"
 #include "QEasingCurve"
 #include "QStackedWidget"
-
+#include "auth.h"
+#include "db_connection.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentWidget(ui->homePage);
+    this->setFixedSize(this->size().width(),this->size().height());
+
 }
 
 MainWindow::~MainWindow()
@@ -80,5 +83,40 @@ void MainWindow::on_Settings_clicked()
 void MainWindow::on_Home_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->homePage);
+}
+
+
+void MainWindow::on_logoutBtn_clicked()
+{
+    conn = new db_connection();
+
+
+    QString filename = QDir::currentPath()+"/autologin.txt";
+    QFile file(filename);
+    if(!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::information(0, "error", file.errorString());
+    }
+
+        QTextStream in(&file);
+        QString username = in.readLine(0);
+        QString queryString = "update users set is_logged=0 where username ='"+username+"' OR email ='"+username+"'";
+        qDebug() << queryString;
+    if(conn->testConnection())
+       // query->prepare(queryString);
+        conn->query->exec(queryString);
+    else
+        qDebug() << "error connection";
+
+    conn->~db_connection();
+
+
+    ath = new auth();
+    ath->show();
+    ath->setFixedSize(ath->size());
+
+
+    this->~MainWindow();
+
+
 }
 

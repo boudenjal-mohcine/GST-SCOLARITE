@@ -17,18 +17,21 @@ auth::auth(QWidget *parent) :
 
     connect(ui->pushButton_2, SIGNAL(click()), this, SLOT(on_pushButton_2_clicked()));
     connect(ui->commandLinkButton, SIGNAL(click()), this, SLOT(on_commandLinkButton_clicked()));
-    conn = new db_connection();
 
     this->setFixedSize(this->size().width(),this->size().height());
+    conn = new db_connection();
+
 }
 
 auth::~auth()
 {
     delete ui;
+    conn->~db_connection();
 }
 
 void auth::on_pushButton_clicked()
 {
+        conn = new db_connection();
 
 
         conn->testConnection()?qInfo() << "successful":qInfo() <<"failed";
@@ -47,48 +50,41 @@ void auth::on_pushButton_clicked()
                     conn->query->bindValue(":password", password);
                     conn->query->exec();
 
-                    if(conn->query->next()){/*
-                        conn->record = conn->query->record();
-                           if(conn->record.value(3).toString()!="1"){
+                    if(conn->query->next()){
                                conn->query->prepare("update users set is_logged=1 where username =:username OR email=:username");
                                conn->query->bindValue(":username", username);
                                conn->query->exec();
-                           }else
-                        */
-                        QString filename = QDir::currentPath()+"/autologin.txt";
-                        qDebug()<<filename;
-                           QFile file(filename);
-                           if (file.open(QIODevice::ReadWrite)) {
-                               qDebug() << "file created in path";
-                               QTextStream stream(&file);
-                               stream << username << Qt::endl;
-                           } else{
-                           qDebug() << "file open error";
-                          }
 
-                        m = new MainWindow;
-                        m->show();
-                        m->setFixedSize(m->size());
-                        auth::~auth();
+                               QString filename = QDir::currentPath()+"/autologin.txt";
+                               qDebug()<<filename;
+                                  QFile file(filename);
+                                  if (file.open(QIODevice::ReadWrite)) {
+                                      qDebug() << "file created in path";
+                                      QTextStream stream(&file);
+                                      stream << username << Qt::endl;
+                                  } else{
+                                  qDebug() << "file open error";
+                                 }
 
 
-                    }else{
-
-                        QMessageBox::warning(this,"Attention","Username or password invalid");
-
-
-                    }
+                                m = new MainWindow;
+                                m->show();
+                                m->setFixedSize(m->size());
+                                auth::~auth();
 
 
-               } else {
+                     }else{
+
+                            QMessageBox::warning(this,"Attention","Username or password invalid");
+                     }
+                   }else{
 
                     QMessageBox::warning(this,"Attention","Passwords must be greater than 8 charcarters ");
 
-                }
+               }
 
 
-
-           }else{
+           } else{
 
                 QMessageBox::warning(this,"Attention","Connection Failed");
 

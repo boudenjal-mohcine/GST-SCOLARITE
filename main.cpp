@@ -9,7 +9,6 @@
 #include "mainwindow.h"
 #include "qsqldatabase.h"
 #include "qsqlquery.h"
-#include "qsqlrecord.h"
 
 
 int main(int argc, char *argv[])
@@ -37,7 +36,8 @@ int main(int argc, char *argv[])
         }
 
             QTextStream in(&file);
-            QString queryString = "select is_logged from users where username = '"+in.readLine(0)+"'";
+            QString username = in.readLine(0);
+            QString queryString = "select is_logged from users where username = '"+username+"' OR email = '"+username+"'";
             qDebug() << queryString;
 
            // query->prepare(queryString);
@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
     qDebug() << "Connection FAILED.";
 
     }
+    */
 
    //     QMessageBox::warning(0,"Information","Connection success");
    //     conn->testConnection()?qInfo() << "successful":qInfo() <<"failed";

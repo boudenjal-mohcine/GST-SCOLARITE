@@ -3,11 +3,12 @@
 
 #include <QMainWindow>
 #include "QPropertyAnimation"
+#include "auth.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
+class db_connection;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -31,8 +32,14 @@ private slots:
 
     void on_Home_clicked();
 
+    void on_logoutBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation* animation;
+    db_connection* conn;
+    auth* ath;
+
+
 };
 #endif // MAINWINDOW_H

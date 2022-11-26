@@ -19,5 +19,6 @@
         <file>bell.png</file>
         <file>profile-user.png</file>
         <file>menu.png</file>
+        <file>logout.png</file>
     </qresource>
 </RCC>

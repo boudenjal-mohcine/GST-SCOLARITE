@@ -255,11 +255,36 @@ QPushButton: hover {
 }</string>
          </property>
          <property name="text">
-          <string>Mohcine01</string>
+          <string/>
          </property>
          <property name="icon">
           <iconset resource="images.qrc">
            <normaloff>:/profile-user.png</normaloff>:/profile-user.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logoutBtn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color:#39AAFF;
+	border-radius: 0px;
+	color: #000000;
+
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="images.qrc">
+           <normaloff>:/logout.png</normaloff>:/logout.png</iconset>
          </property>
          <property name="iconSize">
           <size>
