@@ -79,7 +79,7 @@ void auth::on_pushButton_clicked()
                      }
                    }else{
 
-                    QMessageBox::warning(this,"Attention","Passwords must be greater than 8 charcarters ");
+                    QMessageBox::warning(this,"Attention","Passwords must be greater than 8 charcarters");
 
                }
 

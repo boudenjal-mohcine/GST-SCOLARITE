@@ -32,8 +32,9 @@ int main(int argc, char *argv[])
         QString filename = QDir::currentPath()+"/autologin.txt";
         QFile file(filename);
         if(!file.open(QIODevice::ReadOnly)) {
-            QMessageBox::information(0, "error", file.errorString());
-        }
+            auth.show();
+            //   QMessageBox::information(0, "error", file.errorString());
+        }else{
 
             QTextStream in(&file);
             QString username = in.readLine(0);
@@ -54,9 +55,11 @@ int main(int argc, char *argv[])
              }
             }
          file.close();
+        }
     }else{
         qDebug() << "Connection FAILED.";
     }
+
 /*
     }else{
     qDebug() << "Connection FAILED.";
