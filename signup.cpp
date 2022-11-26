@@ -33,7 +33,7 @@ void signup::on_pushButton_2_clicked()
         QString email = ui->lineEdit_2->text();
         QString password = ui->lineEdit_3->text();
         QString password_2 = ui->lineEdit_5->text();
-        QString school = ui->comboBox->currentText();
+        QString university = ui->comboBox->currentText();
 
 
 
@@ -56,11 +56,11 @@ void signup::on_pushButton_2_clicked()
           //  QMessageBox::information(this,"Attention","Succes");
 
 
-        conn->query->prepare("insert into login(username, password, email, school) values(:username, :password, :email, :school)");
+        conn->query->prepare("insert into users(username, password, email, university, is_logged) values(:username, :password, :email, :university,0)");
         conn->query->bindValue(":username", username);
         conn->query->bindValue(":password", password);
         conn->query->bindValue(":email", email);
-        conn->query->bindValue(":school", school);
+        conn->query->bindValue(":university", university);
 
         conn->query->exec();
 

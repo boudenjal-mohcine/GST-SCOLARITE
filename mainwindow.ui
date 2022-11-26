@@ -255,7 +255,7 @@ QPushButton: hover {
 }</string>
          </property>
          <property name="text">
-          <string/>
+          <string>Mohcine01</string>
          </property>
          <property name="icon">
           <iconset resource="images.qrc">
@@ -643,7 +643,7 @@ QComboBox {
              <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="homePage"/>
             <widget class="QWidget" name="studentPage">

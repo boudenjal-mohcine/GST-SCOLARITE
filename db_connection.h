@@ -14,8 +14,11 @@ class db_connection
 
 public:
     QSqlQuery *query;
+    QSqlRecord record;
+    QSqlField field;
     db_connection();
     bool testConnection();
+    ~db_connection();
 };
 
 

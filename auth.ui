@@ -211,19 +211,6 @@ QLineEdit{
      <string>forget the password</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>151</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Username</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QToolButton" name="toolButton">
    <property name="enabled">
@@ -253,7 +240,7 @@ QLineEdit{
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="images.qrc">
      <normaloff>:/refer.png</normaloff>:/refer.png</iconset>
    </property>
    <property name="iconSize">
@@ -300,7 +287,7 @@ QLineEdit{
     <string/>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="images.qrc">
      <normaloff>:/image.png</normaloff>:/image.png</iconset>
    </property>
    <property name="iconSize">
@@ -323,6 +310,8 @@ QLineEdit{
   <zorder>frame</zorder>
   <zorder>toolButton</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -38,18 +38,33 @@ void auth::on_pushButton_clicked()
 
             QString username = ui->lineEdit->text();
             QString password = ui->lineEdit_2->text();
-            QString email = ui->lineEdit->text();
 
 
-            if(!username.isEmpty() && !password.isEmpty() && password.length()>8 ){
+            if(!username.isEmpty() && !password.isEmpty() && password.length()>=8 ){
 
-                    conn->query->prepare("select username, password, email from login where username =:username OR email=:email AND password=:password; ");
+                    conn->query->prepare("select username, password, email,is_logged from users where username =:username OR email=:username AND password=:password; ");
                     conn->query->bindValue(":username", username);
                     conn->query->bindValue(":password", password);
-                    conn->query->bindValue(":email", email);
                     conn->query->exec();
 
-                    if(conn->query->next()){
+                    if(conn->query->next()){/*
+                        conn->record = conn->query->record();
+                           if(conn->record.value(3).toString()!="1"){
+                               conn->query->prepare("update users set is_logged=1 where username =:username OR email=:username");
+                               conn->query->bindValue(":username", username);
+                               conn->query->exec();
+                           }else
+                        */
+                        QString filename = QDir::currentPath()+"/autologin.txt";
+                        qDebug()<<filename;
+                           QFile file(filename);
+                           if (file.open(QIODevice::ReadWrite)) {
+                               qDebug() << "file created in path";
+                               QTextStream stream(&file);
+                               stream << username << Qt::endl;
+                           } else{
+                           qDebug() << "file open error";
+                          }
 
                         m = new MainWindow;
                         m->show();

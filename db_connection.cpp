@@ -6,7 +6,7 @@ db_connection::db_connection()
     this->localhost ="localhost";
     this->username="root";
     this->password="";
-    this->dbname="GST-SCOLARITE";
+    this->dbname="gst-scolarite";
 
     this->db=QSqlDatabase::addDatabase(driver);
     this->db.setHostName(localhost);
@@ -17,7 +17,14 @@ db_connection::db_connection()
     this->db.open();
 
     this->query = new QSqlQuery(dbname);
+ //   this->record =QSqlRecord();
+  //  this->field = new QSqlField();
 
+}
+
+db_connection::~db_connection(){
+
+    this->db.close();
 }
 
 bool db_connection::testConnection(){
