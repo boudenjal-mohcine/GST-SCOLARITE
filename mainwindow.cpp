@@ -152,3 +152,12 @@ void MainWindow::on_Subject_clicked()
 
 }
 
+
+void MainWindow::on_menuBtn_clicked()
+{
+
+    (ui->frame_3->minimumWidth()==0)?ui->frame_3->setMinimumWidth(300):ui->frame_3->setMinimumWidth(0);
+
+
+}
+

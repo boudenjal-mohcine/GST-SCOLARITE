@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1049</width>
-    <height>582</height>
+    <width>1100</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,6 +107,19 @@ QScrollBar{
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: white;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+QPushButton:hover {
+	background-color: red;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -331,15 +344,21 @@ QPushButton: hover {
          <property name="enabled">
           <bool>true</bool>
          </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
-           <width>250</width>
+           <width>300</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>250</width>
+           <width>0</width>
            <height>16777215</height>
           </size>
          </property>
@@ -347,6 +366,7 @@ QPushButton: hover {
           <string notr="true">QFrame {
 	background-color: #39AAFF;
 	height:700px;
+	margin-top:0;
 }
 
 QPushButton {
@@ -372,7 +392,7 @@ QPushButton: hover {
 </string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
@@ -432,6 +452,47 @@ QPushButton: hover {
            </widget>
           </item>
           <item alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="Classrooms">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	border-radius: 60px;
+	background: #39AAFF;
+}
+
+QPushButton: hover {
+	background-color: white;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}</string>
+            </property>
+            <property name="text">
+             <string> Classrooms</string>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/classroom.png</normaloff>:/classroom.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>45</width>
+              <height>51</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignLeft">
            <widget class="QPushButton" name="Instructor">
             <property name="enabled">
              <bool>true</bool>
@@ -461,7 +522,7 @@ QPushButton: hover {
 }</string>
             </property>
             <property name="text">
-             <string> Instructor</string>
+             <string> Instructors</string>
             </property>
             <property name="icon">
              <iconset resource="images.qrc">
@@ -490,11 +551,11 @@ QPushButton: hover {
              </size>
             </property>
             <property name="text">
-             <string> Student</string>
+             <string> Departments</string>
             </property>
             <property name="icon">
              <iconset resource="images.qrc">
-              <normaloff>:/student-with-graduation-cap.png</normaloff>:/student-with-graduation-cap.png</iconset>
+              <normaloff>:/school.png</normaloff>:/school.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -668,7 +729,7 @@ QComboBox {
              <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="homePage"/>
             <widget class="QWidget" name="studentPage">
@@ -1099,7 +1160,7 @@ QPushButton:hover{
                 <x>0</x>
                 <y>0</y>
                 <width>991</width>
-                <height>561</height>
+                <height>691</height>
                </rect>
               </property>
               <property name="styleSheet">

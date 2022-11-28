@@ -28,6 +28,11 @@ private slots:
 
     void on_search_btn_2_clicked();
 
+
+    void on_update_btn_clicked();
+
+    void on_save_btn_clicked();
+
 private:
     Ui::subject *ui;
     MainWindow *mw;

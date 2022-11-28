@@ -14,6 +14,7 @@ subject::subject(QWidget *parent) :
     conn = new db_connection();
     model = new QSqlTableModel(this);
     refreshTable();
+    ui->tab->setDisabled(true);
 }
 
 void subject::refreshTable(){
@@ -21,8 +22,9 @@ void subject::refreshTable(){
     model->setTable("subjects");
     model->removeColumn(0);
     model->select();
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    model->setEditStrategy(QSqlTableModel::OnRowChange);
     ui->subject_table->setModel(model);
+    ui->subject_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->subject_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     //records counter
@@ -101,22 +103,22 @@ void subject::on_delete_btn_clicked()
 
        if(!shortcut.isEmpty()){
 
+
                conn->query->prepare("delete from subjects where shortcut =:shortcut");
                conn->query->bindValue(":shortcut", shortcut);
 
-               try {
                    conn->query->exec();
-
-                   QMessageBox::information(this,"Attention","Subject deleted");
+                   bool error = conn->query->lastError().nativeErrorCode().toInt()==1451;
                    ui->deleteLine->clear();
                    refreshTable();
 
+                   if(error)
 
-               } catch (...) {
+                          QMessageBox::warning(this,"Attention",shortcut+" is already used");
 
-                   QMessageBox::warning(this,"Attention","Subject not found");
+                   else
 
-               }
+                          QMessageBox::information(this,"Information",shortcut+" deleted");
 
           } else {
 
@@ -205,5 +207,116 @@ void subject::on_search_btn_2_clicked()
     }
 
     ui->searchLine->clear();
+}
+
+
+void subject::on_update_btn_clicked()
+{
+
+    QString shortcut = ui->deleteLine->text();
+
+
+
+
+    if(conn->testConnection()){
+
+        if(!shortcut.isEmpty()){
+
+            conn->query->prepare("select * from subjects where shortcut=:shortcut");
+            conn->query->bindValue(":shortcut", shortcut);
+            conn->query->exec();
+            if(conn->query->next()){
+
+                ui->nameLine_2->setText(conn->query->value(1).toString());
+                ui->shortcutLine_2->setText(conn->query->value(2).toString());
+                ui->semesterLine_2->setValue(conn->query->value(3).toInt());
+                ui->idLine->setText(conn->query->value(0).toString());
+                ui->tab->setEnabled(true);
+                ui->tabWidget->setCurrentWidget(ui->tab);
+
+
+
+
+
+
+            }else{
+                ui->nameLine_2->clear();
+                ui->shortcutLine_2->clear();
+                ui->semesterLine_2->clear();
+                ui->tab->setEnabled(false);
+
+                QMessageBox::warning(this,"Attention",shortcut+" Not Found");
+
+            }
+
+
+        }else{
+
+            QMessageBox::warning(this,"Attention","Write something");
+
+        }
+
+
+
+
+    }else{
+
+        QMessageBox::warning(this,"Attention","Connection error");
+
+
+    }
+
+}
+
+
+void subject::on_save_btn_clicked()
+{
+    int id = ui->idLine->text().toInt();
+    QString newName = ui->nameLine_2->text();
+    QString newShortcut = ui->shortcutLine_2->text();
+    int newSemester = ui->semesterLine_2->text().toInt();
+
+
+    if(conn->testConnection()){
+
+        if(!newName.isEmpty()&&!newShortcut.isEmpty()){
+
+            conn->query->prepare("update subjects set name=:newName, shortcut=:newShortcut, semester=:newSemester where id=:id");
+            conn->query->bindValue(":newName", newName);
+            conn->query->bindValue(":newShortcut", newShortcut);
+            conn->query->bindValue(":newSemester", newSemester);
+            conn->query->bindValue(":id", id);
+            conn->query->exec();
+
+
+            QMessageBox::information(this,"Information","Subject updated successfully");
+            refreshTable();
+
+            ui->nameLine_2->clear();
+            ui->shortcutLine_2->clear();
+            ui->semesterLine_2->clear();
+            ui->tab->setEnabled(false);
+            ui->deleteLine->clear();
+
+            ui->tabWidget->setCurrentWidget(ui->tab_4);
+
+
+
+        }else{
+
+            QMessageBox::warning(this,"Attention","Write something");
+
+        }
+
+    }else{
+
+        QMessageBox::warning(this,"Attention","Connection error");
+
+
+    }
+
+
+
+
 }
 

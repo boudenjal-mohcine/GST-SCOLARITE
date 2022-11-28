@@ -165,6 +165,140 @@ color: rgb(173, 66, 164);</string>
      </property>
     </widget>
    </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Update subject</string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>140</y>
+       <width>391</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLineEdit" name="idLine">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Century Gothic&quot;;
+color: rgb(173, 66, 164);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nameLine_2">
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Century Gothic&quot;;
+color: rgb(173, 66, 164);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="shortcutLine_2">
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Century Gothic&quot;;
+color: rgb(173, 66, 164);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="semesterLine_2">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="save_btn">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>460</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>140</y>
+       <width>160</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_20">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_18">
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_19">
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Shortcut</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_24">
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Semester</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
      <string>Instructor Statistics</string>
@@ -306,74 +440,6 @@ color: rgb(6, 0, 203);</string>
     <attribute name="title">
      <string>Edit Instructor</string>
     </attribute>
-    <widget class="QPushButton" name="first_btn_2">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>450</y>
-       <width>91</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-     </property>
-     <property name="text">
-      <string>&lt;&lt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="previous_btn_2">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>450</y>
-       <width>91</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-     </property>
-     <property name="text">
-      <string>&lt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="next_btn_2">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>450</y>
-       <width>91</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-     </property>
-     <property name="text">
-      <string>&gt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="last_btn_2">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>450</y>
-       <width>91</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-     </property>
-     <property name="text">
-      <string>&gt;&gt;</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="add_btn_2">
      <property name="geometry">
       <rect>
@@ -395,13 +461,13 @@ color: rgb(56, 56, 191);</string>
       <rect>
        <x>390</x>
        <y>90</y>
-       <width>541</width>
+       <width>391</width>
        <height>261</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLineEdit" name="shortcutLine">
+       <widget class="QLineEdit" name="nameLine">
         <property name="styleSheet">
          <string notr="true">font: 14pt &quot;Century Gothic&quot;;
 color: rgb(173, 66, 164);</string>
@@ -412,7 +478,7 @@ color: rgb(173, 66, 164);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="nameLine">
+       <widget class="QLineEdit" name="shortcutLine">
         <property name="styleSheet">
          <string notr="true">font: 14pt &quot;Century Gothic&quot;;
 color: rgb(173, 66, 164);</string>
@@ -561,6 +627,22 @@ color: rgb(173, 66, 164);</string>
    </property>
    <property name="autoExclusive">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="update_btn">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>710</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Update</string>
    </property>
   </widget>
  </widget>

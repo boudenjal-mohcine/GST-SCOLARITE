@@ -37,6 +37,8 @@ private slots:
 
     void on_Subject_clicked();
 
+    void on_menuBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation* animation;

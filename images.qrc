@@ -20,5 +20,7 @@
         <file>profile-user.png</file>
         <file>menu.png</file>
         <file>logout.png</file>
+        <file>classroom.png</file>
+        <file>school.png</file>
     </qresource>
 </RCC>
