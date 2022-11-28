@@ -255,7 +255,7 @@ QPushButton: hover {
 }</string>
          </property>
          <property name="text">
-          <string/>
+          <string>Username</string>
          </property>
          <property name="icon">
           <iconset resource="images.qrc">
@@ -534,7 +534,7 @@ QPushButton: hover {
            </widget>
           </item>
           <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="Courses">
+           <widget class="QPushButton" name="Subject">
             <property name="minimumSize">
              <size>
               <width>150</width>
@@ -548,7 +548,7 @@ QPushButton: hover {
              </size>
             </property>
             <property name="text">
-             <string> Courses</string>
+             <string> Subjects</string>
             </property>
             <property name="icon">
              <iconset resource="images.qrc">

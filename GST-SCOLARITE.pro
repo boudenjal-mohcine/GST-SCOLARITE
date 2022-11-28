@@ -15,7 +15,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     professor.cpp \
-    signup.cpp
+    signup.cpp \
+    subject.cpp
 
 HEADERS += \
     auth.h \
@@ -23,7 +24,8 @@ HEADERS += \
     forgotpassword.h \
     mainwindow.h \
     professor.h \
-    signup.h
+    signup.h \
+    subject.h
 
 FORMS += \
     auth.ui \
@@ -36,7 +38,7 @@ FORMS += \
     plannings.ui \
     professor.ui \
     signup.ui \
-    subjects.ui
+    subject.ui
 
 TRANSLATIONS += \
     GST-SCOLARITE_fr_FR.ts
