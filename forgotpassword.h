@@ -4,9 +4,9 @@
 #include <QDialog>
 
 namespace Ui {
-class auth;
 class forgotpassword;
 }
+class auth;
 
 class forgotpassword : public QDialog
 {
@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::forgotpassword *ui;
-
+    auth *a;
 };
 
 #endif // FORGOTPASSWORD_H

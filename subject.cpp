@@ -87,7 +87,6 @@ subject::~subject()
 
 void subject::on_back_clicked()
 {
-
     mw=new MainWindow;
     mw->show();
     subject::~subject();

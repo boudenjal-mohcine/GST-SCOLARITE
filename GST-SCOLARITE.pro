@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     auth.cpp \
+    classrooms.cpp \
     db_connection.cpp \
     department.cpp \
     forgotpassword.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     auth.h \
+    classrooms.h \
     db_connection.h \
     department.h \
     forgotpassword.h \

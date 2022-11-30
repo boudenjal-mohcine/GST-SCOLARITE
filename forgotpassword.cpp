@@ -6,6 +6,8 @@ forgotpassword::forgotpassword(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::forgotpassword)
 {
+    a = new auth;
+
     ui->setupUi(this);
    connect(ui->toolButton_3, SIGNAL(click()), this, SLOT(on_toolButton_3_clicked()));
 
@@ -20,7 +22,6 @@ void forgotpassword::on_toolButton_3_clicked()
 {
 
 
-    auth *a = new auth;
     a->show();
     forgotpassword::~forgotpassword();
 

@@ -1,4 +1,7 @@
 #include "mainwindow.h"
+#include "QBarCategoryAxis"
+#include "QChart"
+#include "classrooms.h"
 #include "department.h"
 #include "professors.h"
 #include "ui_mainwindow.h"
@@ -14,10 +17,15 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    conn = new db_connection();
+
+    courbe = new QLineSeries();
+    courbeChart();
+    pieChart();
+
     ui->setupUi(this);
     ui->stackedWidget->setCurrentWidget(ui->homePage);
     this->setFixedSize(this->size().width(),this->size().height());
-    conn = new db_connection();
     QString filename = QDir::currentPath()+"/autologin.txt";
     QFile file(filename);
     if(!file.open(QIODevice::ReadOnly)) {
@@ -43,36 +51,138 @@ MainWindow::MainWindow(QWidget *parent)
         ui->profBtn->setText(usernameInDatabase);
         }
 
+void MainWindow::courbeChart()
+{
+
+    conn = new db_connection();
+
+
+    QList<QString> values;
+    values.append("Monday");
+    values.append("Thursday");
+    values.append("Wednesday");
+    values.append("Thusday");
+    values.append("Friday");
+    values.append("Saturday");
+
+    int episods;
+    QStringList categories;
+    QBarCategoryAxis *axisX = new QBarCategoryAxis();
+
+
+    if(conn->testConnection()){
+        qDebug() << "Sucess";
+    }
+    for (int i = 0; i < values.size(); i++) {
+
+        categories.append(values[i]);
+
+//        conn->testConnection() ? qDebug() << "sucess" : qDebug() << "Failed";
+
+        conn->query->prepare("select count(id) from episodes where day=:day");
+        conn->query->bindValue(":day", values[i]);
+        conn->query->exec();
+        while(conn->query->next()){
+            episods = conn->query->value(0).toInt();
+            courbe->append(i, episods);
+        }
+
+
+    }
+
+    // Technique n°2
+    courbe->setName(QString::fromUtf8("Extérieur"));
+    QPen pen(0x059605);
+    pen.setWidth(3);
+    pen.setStyle(Qt::DashLine);
+    courbe->setPen(pen);
+
+    // Le graphe
+    graphe = new QChart();
+    graphe->addSeries(courbe);
+    graphe->setTitle("Graph of Episods");
+    graphe->setAnimationOptions(QChart::SeriesAnimations);
+
+
+    // Légende
+    //graphe->legend()->hide();
+    graphe->legend()->setAlignment(Qt::AlignBottom);
+
+    // Les axes
+    // Par défaut
+
+
+    // Axe X
+    axisX->append(categories);
+    axisX->setTitleText("Days");
+    graphe->addAxis(axisX, Qt::AlignBottom);
+    courbe->attachAxis(axisX);
+
+    // Axe Y
+    axeY = new QValueAxis;
+    axeY->setRange(0, 5);
+    axeY->setLabelsVisible(true);
+//    axeY->hide();
+    axeY->setTitleText(QString::fromUtf8("Episods"));
+    axeY->setLabelFormat("%d");
+    graphe->addAxis(axeY, Qt::AlignLeft);
+    courbe->setPointsVisible(true);
+//    courbe->setPointLabelsFormat("@yPoint °C");
+    courbe->setPointLabelsVisible(true);
+    courbe->attachAxis(axeY);
+
+    // Le widget
+    graphique = new QChartView(graphe);
+    graphique->setRenderHint(QPainter::Antialiasing);
+//    setCentralWidget(graphique);
+    graphique->setParent(ui->frame_5);
+    graphique->setFixedSize(400,400);
+}
+
+
+// Pie Chart Method
+void MainWindow::pieChart()
+{
+
+    conn = new db_connection();
+
+    int nbOfProf;
+    QString name;
+
+    pieSeries = new QPieSeries();
+
+    conn->query->prepare("SELECT COUNT(professors.name), departments.name FROM professors INNER JOIN departments ON  professors.id_department=departments.id GROUP BY professors.id_department");
+    conn->query->exec();
+    while(conn->query->next()){
+        nbOfProf = conn->query->value(0).toInt();
+        name = conn->query->value(1).toString();
+        pieSeries->append(name, nbOfProf);
+    }
+
+    // Pie Chart
+    chartPie = new QChart();
+    chartPie->addSeries(pieSeries);
+    chartPie->setTitle("Numbre of professors in each department");
+    chartPie->setAnimationOptions(QChart::SeriesAnimations);
+
+    QPieSlice* slice = pieSeries->slices().at(0);
+    slice->setLabelVisible(true);
+
+    QChartView* chartViewPie = new QChartView(chartPie);
+    chartViewPie->setRenderHint(QPainter::Antialiasing);
+    chartViewPie->setParent(ui->frame_6);
+    chartViewPie->setFixedSize(400,400);
+
+}
+
+
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{
-    int extendre;
-
-    if (true){
-
-        int width = this->ui->frame_3->width();
-        int normal = 0;
-        if(width == 0){
-            extendre = 200;
-        }
-        else {
-            extendre = normal;
-        }
-
-        animation = new QPropertyAnimation(ui->menuBtn, "minimumWidth");
-        animation->setDuration(300);
-        animation->setStartValue(width);
-        animation->setEndValue(extendre);
-        animation->setEasingCurve(QEasingCurve::InOutQuad);
-        animation->start();
-    }
-
-}
 
 
 void MainWindow::on_Instructor_clicked()
@@ -83,10 +193,6 @@ void MainWindow::on_Instructor_clicked()
 }
 
 
-void MainWindow::on_Student_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->studentPage);
-}
 
 
 void MainWindow::on_Plainning_clicked()
@@ -96,16 +202,6 @@ void MainWindow::on_Plainning_clicked()
 
 
 
-void MainWindow::on_Courses_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->coursesPage);
-}
-
-
-void MainWindow::on_Settings_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->settingsPage);
-}
 
 
 void MainWindow::on_Home_clicked()
@@ -170,6 +266,17 @@ void MainWindow::on_Department_clicked()
 {
     dpt = new department;
     dpt->show();
+    MainWindow::~MainWindow();
+
+}
+
+
+void MainWindow::on_Classrooms_2_clicked()
+{
+
+    crm= new classrooms;
+    crm->refreshTable();
+    crm->show();
     MainWindow::~MainWindow();
 
 }

@@ -21,6 +21,7 @@ public:
     void refreshTable();
 
 private slots:
+
     void on_back_clicked();
 
     void on_add_btn_2_clicked();

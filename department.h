@@ -17,10 +17,10 @@ class department : public QMainWindow
 public:
     explicit department(QWidget *parent = nullptr);
     ~department();
+    void refreshTable();
 
 private slots:
     void on_back_clicked();
-    void refreshTable();
 
     void on_add_btn_2_clicked();
 

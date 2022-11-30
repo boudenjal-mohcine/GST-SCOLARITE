@@ -17,10 +17,10 @@ class subject : public QDialog
 public:
     explicit subject(QWidget *parent = nullptr);
     ~subject();
+    void refreshTable();
 
 private slots:
     void on_back_clicked();
-    void refreshTable();
 
     void on_delete_btn_clicked();
 

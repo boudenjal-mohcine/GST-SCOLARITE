@@ -4,6 +4,11 @@
 #include <QMainWindow>
 #include "QPropertyAnimation"
 #include "auth.h"
+#include "QLineSeries"
+#include "QPieSeries"
+#include "QChartView"
+#include "QValueAxis"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -12,6 +17,7 @@ class db_connection;
 class subject;
 class department;
 class professors;
+class classrooms;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -19,19 +25,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void courbeChart();
+    void pieChart();
+
 
 private slots:
-    void on_pushButton_clicked();
 
     void on_Instructor_clicked();
 
-    void on_Student_clicked();
-
     void on_Plainning_clicked();
-
-    void on_Courses_clicked();
-
-    void on_Settings_clicked();
 
     void on_Home_clicked();
 
@@ -43,6 +45,8 @@ private slots:
 
     void on_Department_clicked();
 
+    void on_Classrooms_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation* animation;
@@ -51,7 +55,14 @@ private:
     subject* sbj;
     department* dpt;
     professors* pfr;
+    classrooms* crm;
 
+    QLineSeries* courbe;
+    QChart* graphe;
+    QValueAxis* axeY;
+    QChartView* graphique;
+    QPieSeries* pieSeries;
+    QChart* chartPie;
 
 };
 #endif // MAINWINDOW_H

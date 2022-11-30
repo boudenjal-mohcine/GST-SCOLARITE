@@ -85,8 +85,7 @@ department::~department()
 
 void department::on_back_clicked()
 {
-
-    mw = new MainWindow;
+    mw=new MainWindow;
 
     mw->show();
     department::~department();
