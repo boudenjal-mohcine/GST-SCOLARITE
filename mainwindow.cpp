@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "department.h"
+#include "professors.h"
 #include "ui_mainwindow.h"
 #include "QPropertyAnimation"
 #include "QEasingCurve"
@@ -75,7 +77,9 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_Instructor_clicked()
 {
-    ui->stackedWidget->setCurrentWidget(ui->instructorPage);
+    pfr = new professors;
+    pfr->show();
+    MainWindow::~MainWindow();
 }
 
 
@@ -158,6 +162,15 @@ void MainWindow::on_menuBtn_clicked()
 
     (ui->frame_3->minimumWidth()==0)?ui->frame_3->setMinimumWidth(300):ui->frame_3->setMinimumWidth(0);
 
+
+}
+
+
+void MainWindow::on_Department_clicked()
+{
+    dpt = new department;
+    dpt->show();
+    MainWindow::~MainWindow();
 
 }
 

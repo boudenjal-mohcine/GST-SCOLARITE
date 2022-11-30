@@ -10,6 +10,8 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 class db_connection;
 class subject;
+class department;
+class professors;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -39,12 +41,16 @@ private slots:
 
     void on_menuBtn_clicked();
 
+    void on_Department_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation* animation;
     db_connection* conn;
     auth* ath;
     subject* sbj;
+    department* dpt;
+    professors* pfr;
 
 
 };

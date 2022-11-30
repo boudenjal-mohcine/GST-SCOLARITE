@@ -39,6 +39,7 @@ private:
     db_connection *conn;
     QSqlTableModel *model;
 
+
     //records counter
 
     QString instractorsCounter;

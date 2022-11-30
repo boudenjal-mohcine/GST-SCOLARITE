@@ -17,6 +17,7 @@ public:
     QSqlRecord record;
     QSqlField field;
     db_connection();
+    QSqlDatabase getDb();
     bool testConnection();
     ~db_connection();
 };

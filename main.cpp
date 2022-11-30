@@ -7,6 +7,7 @@
 #include<QMessageBox>
 #include "auth.h"
 #include "mainwindow.h"
+#include "professors.h"
 #include "qsqldatabase.h"
 #include "qsqlquery.h"
 
@@ -15,9 +16,16 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-    auth auth;
-    MainWindow win;
+   // auth auth;
+   // MainWindow win;
 
+
+    ////
+    professors prof;
+    prof.show();
+
+    ////
+/*
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setUserName("root");
@@ -59,7 +67,7 @@ int main(int argc, char *argv[])
     }else{
         qDebug() << "Connection FAILED.";
     }
-
+*/
 /*
     }else{
     qDebug() << "Connection FAILED.";

@@ -15,52 +15,54 @@ subject::subject(QWidget *parent) :
     model = new QSqlTableModel(this);
     refreshTable();
     ui->tab->setDisabled(true);
+    this->setFixedSize(this->size().width(),this->size().height());
+
 }
 
-void subject::refreshTable(){
+    void subject::refreshTable(){
 
-    model->setTable("subjects");
-    model->removeColumn(0);
-    model->select();
-    model->setEditStrategy(QSqlTableModel::OnRowChange);
-    ui->subject_table->setModel(model);
-    ui->subject_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->subject_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        model->setTable("subjects");
+        model->removeColumn(0);
+        model->select();
+        model->setEditStrategy(QSqlTableModel::OnRowChange);
+        ui->subject_table->setModel(model);
+        ui->subject_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        ui->subject_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    //records counter
+        //records counter
 
-    //////////////////
+        //////////////////
 
-    conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM subjects;");
-    while(conn->query->next()){
-        subjectsCounter=conn->query->value(0).toString();
-    }
-    ui->sub_counter->setText(subjectsCounter);
+        conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM subjects;");
+        while(conn->query->next()){
+            subjectsCounter=conn->query->value(0).toString();
+        }
+        ui->sub_counter->setText(subjectsCounter);
 
-    //////////////////
-
-
-    //////////////////
-
-    conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM departments;");
-    while(conn->query->next()){
-        departementsCounter=conn->query->value(0).toString();
-    }
-    ui->dep_counter->setText(departementsCounter);
-
-    //////////////////
+        //////////////////
 
 
+        //////////////////
 
-    //////////////////
+        conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM departments;");
+        while(conn->query->next()){
+            departementsCounter=conn->query->value(0).toString();
+        }
+        ui->dep_counter->setText(departementsCounter);
 
-    conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM episodes;");
-    while(conn->query->next()){
-        episodesCounter=conn->query->value(0).toString();
-    }
-    ui->epi_counter->setText(episodesCounter);
+        //////////////////
 
-    //////////////////
+
+
+        //////////////////
+
+        conn->query->exec("SELECT COUNT(id) AS NumberOfProducts FROM episodes;");
+        while(conn->query->next()){
+            episodesCounter=conn->query->value(0).toString();
+        }
+        ui->epi_counter->setText(episodesCounter);
+
+        //////////////////
 
 
 
@@ -103,6 +105,18 @@ void subject::on_delete_btn_clicked()
 
        if(!shortcut.isEmpty()){
 
+           conn->query->prepare("select * from subjects where shortcut =:shortcut");
+           conn->query->bindValue(":shortcut", shortcut);
+
+           conn->query->exec();
+
+           if(!conn->query->next()){
+
+               QMessageBox::warning(this,"Attention",shortcut+" not found");
+               ui->deleteLine->clear();
+
+           }else{
+
 
                conn->query->prepare("delete from subjects where shortcut =:shortcut");
                conn->query->bindValue(":shortcut", shortcut);
@@ -119,7 +133,7 @@ void subject::on_delete_btn_clicked()
                    else
 
                           QMessageBox::information(this,"Information",shortcut+" deleted");
-
+          }
           } else {
 
                QMessageBox::warning(this,"Attention","Write something");

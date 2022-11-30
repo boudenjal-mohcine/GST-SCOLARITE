@@ -11,19 +11,21 @@ CONFIG += c++17
 SOURCES += \
     auth.cpp \
     db_connection.cpp \
+    department.cpp \
     forgotpassword.cpp \
     main.cpp \
     mainwindow.cpp \
-    professor.cpp \
+    professors.cpp \
     signup.cpp \
     subject.cpp
 
 HEADERS += \
     auth.h \
     db_connection.h \
+    department.h \
     forgotpassword.h \
     mainwindow.h \
-    professor.h \
+    professors.h \
     signup.h \
     subject.h
 
@@ -31,12 +33,12 @@ FORMS += \
     auth.ui \
     branches.ui \
     classrooms.ui \
-    departments.ui \
+    department.ui \
     episodes.ui \
     forgotpassword.ui \
     mainwindow.ui \
     plannings.ui \
-    professor.ui \
+    professors.ui \
     signup.ui \
     subject.ui
 

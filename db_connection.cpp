@@ -33,3 +33,9 @@ bool db_connection::testConnection(){
     return response;
 
 }
+
+QSqlDatabase db_connection::getDb(){
+
+
+    return this->db;
+}
