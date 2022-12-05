@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     auth.cpp \
+    branches.cpp \
     classrooms.cpp \
     db_connection.cpp \
     department.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     auth.h \
+    branches.h \
     classrooms.h \
     db_connection.h \
     department.h \

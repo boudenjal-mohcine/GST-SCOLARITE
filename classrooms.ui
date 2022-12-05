@@ -35,7 +35,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_7">
     <property name="enabled">
@@ -83,7 +83,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>601</width>
+       <width>391</width>
        <height>51</height>
       </rect>
      </property>
@@ -97,7 +97,7 @@
     <widget class="QPushButton" name="search_btn">
      <property name="geometry">
       <rect>
-       <x>870</x>
+       <x>720</x>
        <y>10</y>
        <width>171</width>
        <height>51</height>
@@ -113,9 +113,9 @@
     <widget class="QLineEdit" name="searchLine_2">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>410</x>
        <y>10</y>
-       <width>421</width>
+       <width>301</width>
        <height>51</height>
       </rect>
      </property>
@@ -126,6 +126,47 @@ color: rgb(173, 66, 164);</string>
      <property name="text">
       <string/>
      </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>960</x>
+       <y>10</y>
+       <width>191</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_17">
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Filter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>All</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>amphi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>salle</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">

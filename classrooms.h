@@ -18,7 +18,7 @@ class classrooms : public QDialog
 public:
     explicit classrooms(QWidget *parent = nullptr);
     ~classrooms();
-    void refreshTable();
+    void refreshTable(const QString &);  //customize refresh with filter data
     MainWindow* mw;
 
 
@@ -35,6 +35,8 @@ private slots:
     void on_save_btn_2_clicked();
 
     void on_search_btn_clicked();
+
+    void on_comboBox_currentTextChanged(const QString &arg1);
 
 private:
 

@@ -18,6 +18,7 @@ class subject;
 class department;
 class professors;
 class classrooms;
+class branches;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -47,6 +48,10 @@ private slots:
 
     void on_Classrooms_2_clicked();
 
+    void on_Branches_clicked();
+
+    void on_branchSelect_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation* animation;
@@ -56,6 +61,7 @@ private:
     department* dpt;
     professors* pfr;
     classrooms* crm;
+    branches* brc;
 
     QLineSeries* courbe;
     QChart* graphe;

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "QBarCategoryAxis"
 #include "QChart"
+#include "branches.h"
 #include "classrooms.h"
 #include "department.h"
 #include "professors.h"
@@ -19,12 +20,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     conn = new db_connection();
 
+
+
+
+    ui->setupUi(this);
+    ui->stackedWidget->setCurrentWidget(ui->homePage);
+
     courbe = new QLineSeries();
     courbeChart();
     pieChart();
 
-    ui->setupUi(this);
-    ui->stackedWidget->setCurrentWidget(ui->homePage);
     this->setFixedSize(this->size().width(),this->size().height());
     QString filename = QDir::currentPath()+"/autologin.txt";
     QFile file(filename);
@@ -53,8 +58,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::courbeChart()
 {
-
-    conn = new db_connection();
 
 
     QList<QString> values;
@@ -155,7 +158,7 @@ void MainWindow::pieChart()
     conn->query->exec();
     while(conn->query->next()){
         nbOfProf = conn->query->value(0).toInt();
-        name = conn->query->value(1).toString();
+        name = conn->query->value(1).toString().remove("Departement");
         pieSeries->append(name, nbOfProf);
     }
 
@@ -179,6 +182,7 @@ void MainWindow::pieChart()
 
 MainWindow::~MainWindow()
 {
+    conn->getDb().close();
     delete ui;
 }
 
@@ -187,9 +191,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Instructor_clicked()
 {
+    MainWindow::~MainWindow();
     pfr = new professors;
     pfr->show();
-    MainWindow::~MainWindow();
 }
 
 
@@ -198,6 +202,16 @@ void MainWindow::on_Instructor_clicked()
 void MainWindow::on_Plainning_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->plainningPage);
+    //Remplissage du branche select
+
+    conn->query->exec("select id,shortcut from branches");
+
+    while(conn->query->next()){
+
+        ui->branchSelect->addItem(conn->query->value(1).toString(), QVariant(conn->query->value(0).toString()));
+
+    }
+
 }
 
 
@@ -246,9 +260,9 @@ void MainWindow::on_logoutBtn_clicked()
 
 void MainWindow::on_Subject_clicked()
 {
+    MainWindow::~MainWindow();
     sbj = new subject;
     sbj->show();
-    MainWindow::~MainWindow();
 
 }
 
@@ -264,9 +278,9 @@ void MainWindow::on_menuBtn_clicked()
 
 void MainWindow::on_Department_clicked()
 {
+    MainWindow::~MainWindow();
     dpt = new department;
     dpt->show();
-    MainWindow::~MainWindow();
 
 }
 
@@ -274,10 +288,25 @@ void MainWindow::on_Department_clicked()
 void MainWindow::on_Classrooms_2_clicked()
 {
 
-    crm= new classrooms;
-    crm->refreshTable();
-    crm->show();
     MainWindow::~MainWindow();
+    crm= new classrooms;
+    crm->show();
+
+}
+
+
+void MainWindow::on_Branches_clicked()
+{
+    MainWindow::~MainWindow();
+    brc = new branches;
+    brc->show();
+}
+
+
+void MainWindow::on_branchSelect_currentTextChanged(const QString &arg1)
+{
+
+    QMessageBox::information(this,"Attention","You selected "+arg1);
 
 }
 

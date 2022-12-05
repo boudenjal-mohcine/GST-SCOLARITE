@@ -13,7 +13,7 @@ classrooms::classrooms(QWidget *parent) :
 
     ui->setupUi(this);
     model = new QSqlRelationalTableModel(this,conn->getDb());
-    this->refreshTable();
+    this->refreshTable("All");
 
     ui->tab_2->setDisabled(true);
 
@@ -25,9 +25,11 @@ classrooms::classrooms(QWidget *parent) :
 }
 
 
-void classrooms::refreshTable(){
+void classrooms::refreshTable(const QString &arg1){
 
     model->setTable("classrooms");
+    if(arg1!="All")
+        model->setFilter(QString(" type = '%1'").arg(arg1));
     model->removeColumn(0);
     model->setEditStrategy(QSqlTableModel::OnRowChange);
     model->setRelation(3, QSqlRelation("departments", "id", "name"));
@@ -133,7 +135,7 @@ void classrooms::on_add_btn_clicked()
 
                    conn->query->exec();
 
-                   refreshTable();
+                   refreshTable("All");
                    ui->tabWidget->setCurrentWidget(ui->tab_7);
 
                    ui->shortcutLine->clear();
@@ -189,7 +191,7 @@ void classrooms::on_delete_btn_clicked()
                    conn->query->exec();
                    bool error = conn->query->lastError().nativeErrorCode().toInt()==1451;
                    ui->deleteLine->clear();
-                   refreshTable();
+                   refreshTable("All");
 
                    if(error)
 
@@ -289,11 +291,11 @@ void classrooms::on_save_btn_2_clicked()
 
                        conn->query->exec();
 
-                       refreshTable();
+                       refreshTable("All");
                        ui->tabWidget->setCurrentWidget(ui->tab_7);
                        QMessageBox::information(this,"Information",newShortcut+" updated successfully");
 
-                       refreshTable();
+                       refreshTable("All");
 
                        ui->shortcutLine_2->clear();
                        ui->idLine->clear();
@@ -344,5 +346,13 @@ void classrooms::on_search_btn_clicked()
     }
 
     ui->searchLine_2->clear();
+}
+
+
+void classrooms::on_comboBox_currentTextChanged(const QString &arg1)
+{
+
+        refreshTable(arg1);
+
 }
 

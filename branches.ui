@@ -1,639 +1,694 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>branches</class>
+ <widget class="QDialog" name="branches">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1255</width>
-    <height>838</height>
+    <width>1261</width>
+    <height>761</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Parts Inventory App</string>
+   <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>1241</width>
-      <height>611</height>
-     </rect>
+  <widget class="QPushButton" name="update_btn">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>680</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>1621</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="tab_7">
+    <property name="enabled">
+     <bool>true</bool>
     </property>
-    <property name="font">
-     <font>
-      <family>Century Gothic</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="tabPosition">
-     <enum>QTabWidget::North</enum>
-    </property>
-    <property name="tabShape">
-     <enum>QTabWidget::Rounded</enum>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Instuctor Details</string>
+    <attribute name="title">
+     <string>Branches Details</string>
+    </attribute>
+    <widget class="QTableView" name="branches_table">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>100</y>
+       <width>1121</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>1211</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustIgnored</enum>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
      </attribute>
-     <widget class="QTableWidget" name="table">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>80</y>
-        <width>1211</width>
-        <height>461</height>
-       </rect>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>1211</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustIgnored</enum>
-      </property>
-      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="horizontalHeaderStretchLastSection">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="verticalHeaderStretchLastSection">
-       <bool>false</bool>
-      </attribute>
-      <column>
-       <property name="text">
-        <string>ID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Shortcut</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Sems</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Path</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Group</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>601</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 13pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Search for branch that you want</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="count_filter_txt">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>20</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="search_btn">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>20</y>
-        <width>171</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Search</string>
-      </property>
-     </widget>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
     </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Instructor Statistics</string>
-     </attribute>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>180</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Number of Branches</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>280</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Number of Classroms</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>220</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Number of Semesters</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lbl_ref_nbr">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>180</y>
-        <width>91</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 30pt &quot;Century Gothic&quot;;
-color: rgb(6, 0, 203);</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lbl_parts_nbr">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>280</y>
-        <width>91</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 30pt &quot;Century Gothic&quot;;
-color: rgb(6, 0, 203);</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lbl_min_hole">
-      <property name="geometry">
-       <rect>
-        <x>940</x>
-        <y>220</y>
-        <width>91</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 30pt &quot;Century Gothic&quot;;
-color: rgb(6, 0, 203);</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>601</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 13pt &quot;Century Gothic&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Search for branche that you want</string>
+     </property>
     </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Edit Instructor</string>
-     </attribute>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>230</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Number of semester</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_14">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>110</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>170</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Shortcut</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="reference">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>120</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
+    <widget class="QPushButton" name="search_btn">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>10</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="searchLine_2">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>10</y>
+       <width>301</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Century Gothic&quot;;
 color: rgb(173, 66, 164);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="min_area">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>240</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="min_diameter">
-      <property name="geometry">
-       <rect>
-        <x>950</x>
-        <y>210</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>200</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Group</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="first_btn">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>450</y>
-        <width>91</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-      </property>
-      <property name="text">
-       <string>&lt;&lt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="previous_btn">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>450</y>
-        <width>91</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-      </property>
-      <property name="text">
-       <string>&lt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="next_btn">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>450</y>
-        <width>91</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-      </property>
-      <property name="text">
-       <string>&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="last_btn">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>450</y>
-        <width>91</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: bold 30pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);</string>
-      </property>
-      <property name="text">
-       <string>&gt;&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="add_btn">
-      <property name="geometry">
-       <rect>
-        <x>1000</x>
-        <y>450</y>
-        <width>141</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Add New</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="delete_btn">
-      <property name="geometry">
-       <rect>
-        <x>870</x>
-        <y>450</y>
-        <width>121</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="update_btn">
-      <property name="geometry">
-       <rect>
-        <x>740</x>
-        <y>450</y>
-        <width>121</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Update</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>20</y>
-        <width>41</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>ID</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="id">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>20</y>
-        <width>191</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);
-background-color: rgb(241, 241, 241);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>140</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Path</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="number_of_holes">
-      <property name="geometry">
-       <rect>
-        <x>950</x>
-        <y>150</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="part_name">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>180</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;
-color: rgb(173, 66, 164);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>940</x>
+       <y>10</y>
+       <width>271</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_15">
+        <property name="styleSheet">
+         <string notr="true">font: 13pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Filter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>All</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DEUST</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Licence</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Master</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cycle Ingenieur</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
-   <widget class="QPushButton" name="refresh_btn">
-    <property name="geometry">
-     <rect>
-      <x>1070</x>
-      <y>720</y>
-      <width>171</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Refresh</string>
-    </property>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Update Branche</string>
+    </attribute>
+    <widget class="QPushButton" name="save_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>410</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>80</y>
+       <width>501</width>
+       <height>306</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QLineEdit" name="idLine">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nameLine_2"/>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="shortcutLine_2"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>290</y>
+       <width>159</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Shortcut</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>210</y>
+       <width>159</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>120</y>
+       <width>159</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>-10</x>
-      <y>9</y>
-      <width>1271</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 35pt &quot;Century Gothic&quot;;
-color: rgb(56, 56, 191);
-background-color: rgb(199, 197, 199);</string>
-    </property>
-    <property name="text">
-     <string>Branches management</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
+   <widget class="QWidget" name="tab_8">
+    <attribute name="title">
+     <string>Branches Statistics</string>
+    </attribute>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>30</y>
+       <width>561</width>
+       <height>421</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_9">
+    <attribute name="title">
+     <string>Add Branche</string>
+    </attribute>
+    <widget class="QPushButton" name="add_btn">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>340</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>70</y>
+       <width>501</width>
+       <height>255</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QComboBox" name="pathCombo">
+        <item>
+         <property name="text">
+          <string>Licence</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Master</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cycle Ingenieur</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>DEUST</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QComboBox" name="deustCombo">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>MIP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MIPC</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GEGM</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>BCG</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Sections</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="sectionsSpin">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>2</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nameLine"/>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="semestersSpin">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <number>6</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="groupsSpin">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>430</y>
+       <width>121</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Shortcut</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="shortcutLine">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>430</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>L</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>270</y>
+       <width>159</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Groups</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>220</y>
+       <width>159</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Semesters</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>90</y>
+       <width>159</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Path</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>170</y>
+       <width>159</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QToolButton" name="back">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="tabletTracking">
+    <bool>false</bool>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 30px;
+	background: #39AAFF;
+	color: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/back.png</normaloff>:/back.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+   <property name="autoExclusive">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_btn">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>680</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>680</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;Century Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Branche Shortcut</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1255</width>
-     <height>25</height>
+     <width>1261</width>
+     <height>81</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 35pt &quot;Century Gothic&quot;;
+color: rgb(56, 56, 191);
+background-color: rgb(199, 197, 199);</string>
+   </property>
+   <property name="text">
+    <string>Branches management</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QLineEdit" name="deleteLine">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>680</y>
+     <width>391</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Century Gothic&quot;;
+color: rgb(173, 66, 164);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_6</zorder>
+  <zorder>update_btn</zorder>
+  <zorder>tabWidget</zorder>
+  <zorder>back</zorder>
+  <zorder>delete_btn</zorder>
+  <zorder>label_23</zorder>
+  <zorder>deleteLine</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

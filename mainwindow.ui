@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1249</width>
+    <width>1260</width>
     <height>792</height>
    </rect>
   </property>
@@ -474,9 +474,23 @@ QPushButton: hover {
            </spacer>
           </item>
           <item>
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label">
             <property name="text">
              <string>Human resources</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -538,6 +552,13 @@ QPushButton: hover {
            </spacer>
           </item>
           <item>
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label_3">
             <property name="font">
              <font>
@@ -547,6 +568,13 @@ QPushButton: hover {
             </property>
             <property name="text">
              <string>Branches Manage</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -663,6 +691,13 @@ QPushButton: hover {
            </spacer>
           </item>
           <item>
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label_2">
             <property name="font">
              <font>
@@ -672,6 +707,13 @@ QPushButton: hover {
             </property>
             <property name="text">
              <string>Depart. Manage</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -780,58 +822,6 @@ QPushButton: hover {
             </property>
            </spacer>
           </item>
-          <item>
-           <widget class="QPushButton" name="Settings">
-            <property name="minimumSize">
-             <size>
-              <width>150</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="text">
-             <string> Settings               </string>
-            </property>
-            <property name="icon">
-             <iconset resource="images.qrc">
-              <normaloff>:/setting.png</normaloff>:/setting.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="AboutUs">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="text">
-             <string> About Us             </string>
-            </property>
-            <property name="icon">
-             <iconset resource="images.qrc">
-              <normaloff>:/info.png</normaloff>:/info.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>35</width>
-              <height>35</height>
-             </size>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -870,14 +860,14 @@ QComboBox {
              <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="homePage">
              <widget class="QFrame" name="frame_5">
               <property name="geometry">
                <rect>
                 <x>20</x>
-                <y>30</y>
+                <y>300</y>
                 <width>431</width>
                 <height>361</height>
                </rect>
@@ -893,7 +883,7 @@ QComboBox {
               <property name="geometry">
                <rect>
                 <x>470</x>
-                <y>30</y>
+                <y>300</y>
                 <width>451</width>
                 <height>361</height>
                </rect>
@@ -903,6 +893,60 @@ QComboBox {
               </property>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_4">
+              <property name="geometry">
+               <rect>
+                <x>120</x>
+                <y>680</y>
+                <width>221</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:black;</string>
+              </property>
+              <property name="text">
+               <string>Episodes per days</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_5">
+              <property name="geometry">
+               <rect>
+                <x>520</x>
+                <y>680</y>
+                <width>321</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:black;</string>
+              </property>
+              <property name="text">
+               <string>Professors per department</string>
+              </property>
+             </widget>
+             <widget class="QCalendarWidget" name="calendarWidget">
+              <property name="geometry">
+               <rect>
+                <x>80</x>
+                <y>10</y>
+                <width>731</width>
+                <height>261</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:#39AAFF;</string>
+              </property>
+              <property name="gridVisible">
+               <bool>false</bool>
+              </property>
+              <property name="navigationBarVisible">
+               <bool>true</bool>
+              </property>
+              <property name="dateEditEnabled">
+               <bool>false</bool>
               </property>
              </widget>
             </widget>
@@ -1346,7 +1390,7 @@ color: #000000;
                 <string>Select branche</string>
                </property>
               </widget>
-              <widget class="QComboBox" name="a_cid_3">
+              <widget class="QComboBox" name="branchSelect">
                <property name="geometry">
                 <rect>
                  <x>280</x>
@@ -1479,35 +1523,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                   <item>
-                   <widget class="QLabel" name="label_71">
+                   <widget class="QLabel" name="Mon1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_72">
+                   <widget class="QLabel" name="Mon2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_74">
+                   <widget class="QLabel" name="Mon3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_75">
+                   <widget class="QLabel" name="Mon4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_76">
+                   <widget class="QLabel" name="Mon5">
                     <property name="text">
                      <string>M21</string>
                     </property>
@@ -1518,35 +1562,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_4">
                   <item>
-                   <widget class="QLabel" name="label_40">
+                   <widget class="QLabel" name="Thu1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_45">
+                   <widget class="QLabel" name="Thu2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_44">
+                   <widget class="QLabel" name="Thu3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_46">
+                   <widget class="QLabel" name="Thu4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_42">
+                   <widget class="QLabel" name="Thu5">
                     <property name="text">
                      <string>M21</string>
                     </property>
@@ -1557,35 +1601,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_7">
                   <item>
-                   <widget class="QLabel" name="label_66">
+                   <widget class="QLabel" name="Wed1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_67">
+                   <widget class="QLabel" name="Wed2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_68">
+                   <widget class="QLabel" name="Wed3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_69">
+                   <widget class="QLabel" name="Wed4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_70">
+                   <widget class="QLabel" name="Wed5">
                     <property name="text">
                      <string>M21</string>
                     </property>
@@ -1596,35 +1640,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_6">
                   <item>
-                   <widget class="QLabel" name="label_53">
+                   <widget class="QLabel" name="Tue1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_54">
+                   <widget class="QLabel" name="Tue2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_62">
+                   <widget class="QLabel" name="Tue3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_63">
+                   <widget class="QLabel" name="Tue4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_64">
+                   <widget class="QLabel" name="Tue5">
                     <property name="text">
                      <string>M21</string>
                     </property>
@@ -1635,35 +1679,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_5">
                   <item>
-                   <widget class="QLabel" name="label_47">
+                   <widget class="QLabel" name="Fri1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_48">
+                   <widget class="QLabel" name="Fri2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_49">
+                   <widget class="QLabel" name="Fri3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_50">
+                   <widget class="QLabel" name="Fri4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_51">
+                   <widget class="QLabel" name="Fri5">
                     <property name="text">
                      <string>M21</string>
                     </property>
@@ -1674,35 +1718,35 @@ color: #000000;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_9">
                   <item>
-                   <widget class="QLabel" name="label_78">
+                   <widget class="QLabel" name="Sat1">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_79">
+                   <widget class="QLabel" name="Sat2">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_80">
+                   <widget class="QLabel" name="Sat3">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_81">
+                   <widget class="QLabel" name="Sat4">
                     <property name="text">
                      <string>M21</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_82">
+                   <widget class="QLabel" name="Sat5">
                     <property name="text">
                      <string>M21</string>
                     </property>
