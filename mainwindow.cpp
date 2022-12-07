@@ -4,6 +4,7 @@
 #include "branches.h"
 #include "classrooms.h"
 #include "department.h"
+#include "episodes.h"
 #include "professors.h"
 #include "ui_mainwindow.h"
 #include "QPropertyAnimation"
@@ -244,8 +245,7 @@ void MainWindow::on_logoutBtn_clicked()
     else
         qDebug() << "error connection";
 
-    conn->~db_connection();
-
+    //conn->~db_connection();
 
     ath = new auth();
     ath->show();
@@ -307,6 +307,17 @@ void MainWindow::on_branchSelect_currentTextChanged(const QString &arg1)
 {
 
     QMessageBox::information(this,"Attention","You selected "+arg1);
+
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    MainWindow::~MainWindow();
+
+    ep=new episodes(nullptr);
+    ep->show();
+
 
 }
 

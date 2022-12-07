@@ -22,5 +22,8 @@
         <file>logout.png</file>
         <file>classroom.png</file>
         <file>school.png</file>
+        <file>add.png</file>
+        <file>edit.png</file>
+        <file>remove.png</file>
     </qresource>
 </RCC>

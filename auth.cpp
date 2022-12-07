@@ -45,7 +45,7 @@ void auth::on_pushButton_clicked()
 
             if(!username.isEmpty() && !password.isEmpty() && password.length()>=8 ){
 
-                    conn->query->prepare("select username, password, email,is_logged from users where username =:username OR email=:username AND password=:password; ");
+                    conn->query->prepare("select username, password, email,is_logged from users where (username =:username OR email=:username) AND password=:password; ");
                     conn->query->bindValue(":username", username);
                     conn->query->bindValue(":password", password);
                     conn->query->exec();

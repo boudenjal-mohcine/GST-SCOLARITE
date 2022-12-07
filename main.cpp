@@ -12,6 +12,7 @@
 #include "qsqldatabase.h"
 #include "qsqlquery.h"
 #include "branches.h"
+#include "episodes.h"
 
 
 int main(int argc, char *argv[])

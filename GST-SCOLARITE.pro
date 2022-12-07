@@ -14,6 +14,7 @@ SOURCES += \
     classrooms.cpp \
     db_connection.cpp \
     department.cpp \
+    episodes.cpp \
     forgotpassword.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     classrooms.h \
     db_connection.h \
     department.h \
+    episodes.h \
     forgotpassword.h \
     mainwindow.h \
     professors.h \
